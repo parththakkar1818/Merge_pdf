@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Center align the text */
+    margin-top: 50px; /* Add some top margin */
+}
+
+h1 {
+    color: #333;
+    font-size: 2em; /* Increase font size */
+    font-family: 'Helvetica', sans-serif; /* Change font family */
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto; /* Center align the form */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px; /* Add padding for better click area */
+    border: none;
+    cursor: pointer;
+    font-size: 1em; /* Set font size */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.5em; /* Increase font size */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}

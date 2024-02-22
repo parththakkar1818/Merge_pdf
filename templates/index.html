@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+<!--    <link rel="stylesheet" href="style.css">-->
+    <style>
+        body {
+            font-family: 'Berlin Sans FB', sans-serif;
+            text-align: center; /* Center align the text */
+            margin-top: 50px; /* Add some top margin */
+<!--            font-size: 2em; /* Increase font size */-->
+        }
+
+        h1 {
+            color: #333;
+            font-size: 4em; /* Increase font size */
+            font-family: 'Berlin Sans FB', sans-serif; /* Change font family */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto; /* Center align the form */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 2em; /* Increase font size */
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px; /* Add padding for better click area */
+            border: none;
+            cursor: pointer;
+            font-size: 1em; /* Set font size */
+            transition: background-color 0.3s; /* Add transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.5em; /* Increase font size */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>PDF Merger</h1>
+
+    <form action="{{ url_for('merge') }}" method="post" enctype="multipart/form-data">
+        <label for="pdfs">Select PDFs:</label>
+        <input type="file" name="pdfs" accept=".pdf" multiple required><br>
+
+        <button type="submit">Merge and Download PDFs</button>
+    </form>
+
+    {% if filenames %}
+        <h2>Uploaded PDFs:</h2>
+        <ul>
+            {% for filename in filenames %}
+                <li>{{ filename }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
